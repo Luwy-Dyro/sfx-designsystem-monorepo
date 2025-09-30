@@ -1,0 +1,8 @@
+{
+  "name": "@mi-ds/tokens",
+  "version": "1.0.0",
+  "main": "tokens.json",
+  "scripts": {
+    "build": "node generate-css.mjs"
+  }
+}
