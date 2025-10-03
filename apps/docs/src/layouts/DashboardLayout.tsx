@@ -6,14 +6,14 @@ import { Footer } from './Footer';
 export const DashboardLayout = () => {
   return (
     // Contenedor principal que organiza todo en una columna vertical
-    <div className="min-h-screen flex flex-col bg-gray-100">
+    <div className="min-h-screen flex flex-col ">
 
       {/* 1. Cuerpo principal de la app (ocupa el espacio disponible) */}
       <div className="flex flex-1">
         <Sidebar />
         
         {/* Contenido principal a la derecha del sidebar */}
-        <main className="flex-1 p-8">
+        <main className="flex-1 px-8 py-6">
           <Header />
           <Outlet /> {/* Aquí se renderizan las páginas */}
         </main>

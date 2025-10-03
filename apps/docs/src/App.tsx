@@ -8,9 +8,9 @@ function App() {
     <Routes>
       <Route path="/login" element={<LoginPage />} />
       <Route path="/" element={<DashboardLayout />}>
-        {/* Rutas anidadas que se mostrarán dentro del DashboardLayout */}
+
         <Route index element={<HomePage />} />
-        {/* Ejemplo: <Route path="colores" element={<PaginaDeColores />} /> */}
+
       </Route>
     </Routes>
   );

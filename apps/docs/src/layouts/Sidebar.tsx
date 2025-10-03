@@ -1,8 +1,21 @@
 import { useState } from 'react';
-import { ChevronDown, Home, Palette, Puzzle, Component } from 'lucide-react'; // Algunos íconos de ejemplo
+import type React from 'react';
+import { ChevronDown, Home, Palette, Puzzle, Component } from 'lucide-react'; 
 
-// Datos del menú (pueden venir de un JSON en el futuro)
-const menuItems = [
+type MenuChild = {
+  label: string;
+  href?: string;
+};
+
+type MenuItem = {
+  label: string;
+  icon: React.ComponentType<{ className?: string }>;
+  href?: string;
+  children?: MenuChild[];
+};
+
+
+const menuItems: MenuItem[] = [
   { label: 'Home', icon: Home, href: '/' },
   { label: 'Fundamentos Visuales', icon: Palette, children: [{ label: 'Colores' }, { label: 'Tipografía' }] },
   { label: 'UI Atómico', icon: Puzzle, children: [{ label: 'Botones' }, { label: 'Otros componentes' }] },
@@ -14,13 +27,20 @@ export const Sidebar = () => {
 
   return (
     <aside
-      className={`bg-white text-gray-700 p-3 mt-5 flex flex-col transition-all duration-300 ${isExpanded ? 'w-64' : 'w-20'}`}
+      className={`bg-white text-primary-blue-600
+         border border-primary-blue-600 rounded-lg overflow-auto
+         mt-5 flex flex-col
+         transition-all duration-300 ${isExpanded ? 'w-64' : 'w-20'}`}
       onMouseEnter={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
     >
-      <div className="flex items-center gap-2 p-2 mb-6">
+      <div className="flex items-center gap-2 mb-6">
         {/* Aquí puedes poner el logo */}
-        <div className="w-10 h-10 bg-blue-800 rounded-md shrink-0"></div>
+        <div className="w-10 h-22 bg-blue-800 rounded-t-md shrink-0 min-w-full
+          flex justify-center items-center 
+        ">
+          <img src="./Logotipo_SF-dark.svg" alt="LogoTipo" className='h-10' />
+        </div>
         {isExpanded && <h1 className="font-bold text-blue-800 text-lg">Clínica San Felipe</h1>}
       </div>
 
@@ -32,7 +52,7 @@ export const Sidebar = () => {
 };
 
 // Sub-componente para cada item del menú
-const NavItem = ({ item, isExpanded }: { item: any; isExpanded: boolean }) => {
+const NavItem = ({ item, isExpanded }: { item: MenuItem; isExpanded: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -47,7 +67,7 @@ const NavItem = ({ item, isExpanded }: { item: any; isExpanded: boolean }) => {
       </div>
       {isOpen && isExpanded && item.children && (
         <div className="pl-10 pt-2 space-y-2">
-          {item.children.map((child: any) => (
+          {item.children.map((child: MenuChild) => (
             <a key={child.label} href="#" className="block text-gray-600 hover:text-black">{child.label}</a>
           ))}
         </div>
