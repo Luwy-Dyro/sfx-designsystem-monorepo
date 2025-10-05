@@ -12,15 +12,20 @@ export const HomePage = () => {
 
       <div className="flex justify-center align-middle pb-15">
         <button
-          className="bg-primary-blue-600 text-white rounded-sm px-3 py-1
+          className="bg-primary-blue-600 text-white rounded-sm px-3 py-1 border-primary-blue-600 border-2
             font-medium text-md mx-2
+            hover:bg-white hover:text-primary-blue-600 hover:border-2 hover:border-primary-blue-600 
+            transition-colors
+            cursor-pointer
         "
         >
           Auto-synced con Figma
         </button>
         <button
           className="bg-white border-2 border-primary-blue-600 rounded-sm px-3 py-1
-            font-medium text-md mx-2
+            font-medium text-md mx-2 cursor-pointer
+            hover:bg-primary-blue-600 hover:text-white
+            transition-colors
         "
         >
           Archivo: UI Kit - CSF
@@ -57,9 +62,9 @@ export const HomePage = () => {
         <strong className="text-2xl font-semibold text-primary-green-600 mb-6 block">
           Principios de diseño
         </strong>
-        <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-6">
-          <div className="flex flex-col sm:flex-row border-2 rounded-lg border-primary-blue-600 overflow-auto">
-            <div className="min-w-full sm:min-w-47 bg-primary-blue-600 flex justify-center items-center p-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-6">
+          <div className="flex flex-col md:flex-row border-2 rounded-lg border-primary-blue-600 overflow-auto">
+            <div className="min-w-full sm:min-w-auto lg:min-w-47 bg-primary-blue-600 flex justify-center items-center p-3">
               <Palette className="h-12 w-12 mb-2 text-white" />
             </div>
             <div className="p-5 bg-primary-blue-50">
@@ -70,8 +75,8 @@ export const HomePage = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row border-2 rounded-lg border-primary-blue-600 overflow-auto">
-            <div className="min-w-full sm:min-w-47 bg-primary-blue-600 flex justify-center items-center p-3">
+          <div className="flex flex-col md:flex-row border-2 rounded-lg border-primary-blue-600 overflow-auto">
+            <div className="min-w-full sm:min-w-auto lg:min-w-47 bg-primary-blue-600 flex justify-center items-center p-3">
               <Palette className="h-12 w-12 mb-2 text-white" />
             </div>
             <div className="p-5 bg-primary-blue-50">
@@ -82,8 +87,8 @@ export const HomePage = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row border-2 rounded-lg border-primary-blue-600 overflow-auto">
-            <div className="min-w-full sm:min-w-47 bg-primary-blue-600 flex justify-center items-center p-3">
+          <div className="flex flex-col md:flex-row border-2 rounded-lg border-primary-blue-600 overflow-auto">
+            <div className="min-w-full sm:min-w-auto lg:min-w-47 bg-primary-blue-600 flex justify-center items-center p-3">
               <Palette className="h-12 w-12 mb-2 text-white" />
             </div>
             <div className="p-5 bg-primary-blue-50">
@@ -94,8 +99,8 @@ export const HomePage = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row border-2 rounded-lg border-primary-blue-600 overflow-auto">
-            <div className="min-w-full sm:min-w-47 bg-primary-blue-600 flex justify-center items-center p-3">
+          <div className="flex flex-col md:flex-row border-2 rounded-lg border-primary-blue-600 overflow-auto">
+            <div className="min-w-full sm:min-w-auto lg:min-w-47 bg-primary-blue-600 flex justify-center items-center p-3">
               <Palette className="h-12 w-12 mb-2 text-white" />
             </div>
             <div className="p-5 bg-primary-blue-50">
@@ -112,11 +117,11 @@ export const HomePage = () => {
         <strong className="text-2xl font-semibold text-primary-green-600 mb-6 block">
             ¿Como comenzar?
         </strong>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
           <div className="flex flex-col rounded-lg overflow-auto shadow-lg">
             <div className="min-w-full flex justify-center items-center ">
-              <img src="https://fastly.picsum.photos/id/666/300/200.jpg?hmac=E23UzrkrZ2AEQyAKPyvxoaJaj1rj2cVh0oqKp_3pQ10" 
+              <img src="./home/Back-Start-1.jpg" 
               alt="Paso 1"
               className="h-46 min-w-full "
               />
@@ -131,7 +136,7 @@ export const HomePage = () => {
 
            <div className="flex flex-col rounded-lg overflow-auto shadow-lg">
             <div className="min-w-full flex justify-center items-center ">
-              <img src="https://fastly.picsum.photos/id/666/300/200.jpg?hmac=E23UzrkrZ2AEQyAKPyvxoaJaj1rj2cVh0oqKp_3pQ10" 
+              <img src="./home/Back-Start-1.jpg"  
               alt="Paso 1"
               className="h-46 min-w-full "
               />
@@ -147,7 +152,7 @@ export const HomePage = () => {
 
          <div className="flex flex-col rounded-lg overflow-auto shadow-lg">
             <div className="min-w-full flex justify-center items-center ">
-              <img src="https://fastly.picsum.photos/id/666/300/200.jpg?hmac=E23UzrkrZ2AEQyAKPyvxoaJaj1rj2cVh0oqKp_3pQ10" 
+              <img src="./home/Back-Start-1.jpg"  
               alt="Paso 1"
               className="h-46 min-w-full "
               />
