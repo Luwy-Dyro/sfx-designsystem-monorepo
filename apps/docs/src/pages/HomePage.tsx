@@ -67,7 +67,7 @@ export const HomePage = () => {
             <div className="min-w-full sm:min-w-auto lg:min-w-47 bg-primary-blue-600 flex justify-center items-center p-3">
               <Palette className="h-12 w-12 mb-2 text-white" />
             </div>
-            <div className="p-5 bg-primary-blue-50">
+            <div className="p-5 bg-primary-blue-50 w-full">
               <b className="text-primary-blue-600">Consistencia</b>
               <p className="text-primary-blue-600">
                 Lenguaje visual unificado en todos los puntos de contacto.
@@ -79,7 +79,7 @@ export const HomePage = () => {
             <div className="min-w-full sm:min-w-auto lg:min-w-47 bg-primary-blue-600 flex justify-center items-center p-3">
               <Palette className="h-12 w-12 mb-2 text-white" />
             </div>
-            <div className="p-5 bg-primary-blue-50">
+            <div className="p-5 bg-primary-blue-50 w-full">
               <b className="text-primary-blue-600">Consistencia</b>
               <p className="text-primary-blue-600">
                 Lenguaje visual unificado en todos los puntos de contacto.
@@ -91,7 +91,7 @@ export const HomePage = () => {
             <div className="min-w-full sm:min-w-auto lg:min-w-47 bg-primary-blue-600 flex justify-center items-center p-3">
               <Palette className="h-12 w-12 mb-2 text-white" />
             </div>
-            <div className="p-5 bg-primary-blue-50">
+            <div className="p-5 bg-primary-blue-50 w-full">
               <b className="text-primary-blue-600">Consistencia</b>
               <p className="text-primary-blue-600">
                 Lenguaje visual unificado en todos los puntos de contacto.
@@ -103,7 +103,7 @@ export const HomePage = () => {
             <div className="min-w-full sm:min-w-auto lg:min-w-47 bg-primary-blue-600 flex justify-center items-center p-3">
               <Palette className="h-12 w-12 mb-2 text-white" />
             </div>
-            <div className="p-5 bg-primary-blue-50">
+            <div className="p-5 bg-primary-blue-50 w-full">
               <b className="text-primary-blue-600">Consistencia</b>
               <p className="text-primary-blue-600">
                 Lenguaje visual unificado en todos los puntos de contacto.
