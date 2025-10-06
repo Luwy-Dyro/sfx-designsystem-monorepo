@@ -1,7 +1,18 @@
 {
-  "name": "@mi-ds/tokens",
-  "version": "1.0.0",
-  "main": "tokens.json",
+  "name": "@Luwy-Dyro/tokens", 
+  "version": "1.0.1",
+  "private": false, 
+  "main": "dist/tokens.css", 
+  "files": [ 
+    "dist"
+  ],
+  "repository": { 
+    "type": "git",
+    "url": "git+https://github.com/Luwy-Dyro/sfx-designsystem-monorepo.git"
+  },
+  "publishConfig": { 
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build": "node generate-css.mjs"
   }
