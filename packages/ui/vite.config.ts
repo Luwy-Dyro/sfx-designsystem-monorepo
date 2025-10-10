@@ -9,6 +9,9 @@ export default defineConfig({
     
     dts({
       insertTypesEntry: true,
+      rollupTypes: true,
+      outDir: 'dist',
+      include: ['index.tsx', 'src'],
     }),
   ],
   build: {

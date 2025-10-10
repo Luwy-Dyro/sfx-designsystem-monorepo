@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect  } from 'react';
 import type React from 'react';
 import { ChevronDown, Home, Palette, Puzzle, Component, ChevronLeft, Calendar  } from 'lucide-react'; 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation, Link} from 'react-router-dom';
 
 
 type MenuChild = {
@@ -16,10 +16,14 @@ type MenuItem = {
   children?: MenuChild[];
 };
 
+type MenuSection = {
+  title: string;
+  items: MenuItem[]; // Esto le dice a TS que 'items' SIEMPRE es un arreglo de MenuItem
+};
 
 const homeItem: MenuItem = { label: 'Home', icon: Home, href: '/' };
 
-const menuSections = [
+const menuSections: MenuSection[] = [
   {
     title: 'MENU',
     items: [
@@ -77,6 +81,21 @@ export const Sidebar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const [openItemLabel, setOpenItemLabel] = useState<string | null>('Fundamentos Visuales'); 
+  
+  const location = useLocation();
+
+  useEffect(() => {
+    // Buscamos si la URL actual corresponde a un item SIN hijos
+    const currentItem = menuSections
+      .flatMap(section => section.items)
+      .find(item => item.href === location.pathname);
+
+    // Si navegamos a un enlace directo (como Home o uno sin 'children'), cerramos el menú.
+    if ((currentItem && !currentItem.children) || location.pathname === homeItem.href) {
+      setOpenItemLabel(null);
+    }
+  }, [location]); // Se ejecuta cada vez que la URL cambia
+
   
   const handleItemClick = (label: string) => {
 
@@ -182,6 +201,9 @@ type NavItemProps = {
 const NavItem = ({ item, isExpanded, isOpen, onClick }: NavItemProps) => {
 
   const navigate = useNavigate();  
+  const location = useLocation();
+  const isActive = item.href ? location.pathname === item.href : false;
+  
   
   const handleClick = () => {
    
@@ -198,7 +220,7 @@ const NavItem = ({ item, isExpanded, isOpen, onClick }: NavItemProps) => {
  <>
       <div
         className={`flex items-center justify-between px-2 py-3 mb-2 rounded-md cursor-pointer transition-colors duration-150
-          ${isOpen
+          ${(isOpen || isActive)
             ? 'bg-primary-blue-50 text-primary-blue-700 font-semibold'
             : 'hover:bg-primary-blue-50'
           }
@@ -215,8 +237,19 @@ const NavItem = ({ item, isExpanded, isOpen, onClick }: NavItemProps) => {
       {isOpen && isExpanded && item.children && (
         <div className="px-3 py-2 space-y-2">
           {item.children.map((child: MenuChild) => (
-       
-             <a key={child.label} href={child.href || "#"} className="flex text-sm text-primary-blue-400 min-h-8 hover:text-primary-blue-600 m-0 justify-start items-center border-l-1 border-primary-blue-400 px-3">{child.label}</a>
+            
+             <Link 
+                key={child.label} 
+                to={child.href || "#"} 
+                className={`flex text-sm text-primary-blue-400 min-h-8 hover:text-primary-blue-600 m-0 justify-start items-center border-l-1 border-primary-blue-100 px-3
+                    ${location.pathname === child.href 
+                        ? 'text-primary-blue-600 font-semibold' 
+                        : 'text-primary-blue-50 hover:text-primary-blue-600'
+                    }`}
+             >
+                {child.label}
+             </Link>
+            //  <a key={child.label} href={child.href || "#"} className="flex text-sm text-primary-blue-400 min-h-8 hover:text-primary-blue-600 m-0 justify-start items-center border-l-1 border-primary-blue-400 px-3">{child.label}</a>
           ))}
         </div>
       )}

@@ -1,40 +1,33 @@
-# Turborepo starter
+# SFX Design System Monorepo
 
-This Turborepo starter is maintained by the Turborepo core team.
+Este monorepo contiene el Design System (tokens + UI) y una app de documentación. Para consumir los paquetes publicados en GitHub Packages desde apps externas, consulta la guía:
 
-## Using this example
+- docs/consumo-paquetes.md
 
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
+## Estructura
 
 ## What's inside?
 
 This Turborepo includes the following packages/apps:
 
-### Apps and Packages
+### Apps y Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `apps/docs`: app de documentación (Vite + React)
+- `packages/tokens`: `@luwy-dyro/tokens` (CSS con variables y fuentes)
+- `packages/ui`: `@luwy-dyro/ui` (librería React de componentes)
+- `packages/eslint-config`, `packages/typescript-config`: configuración compartida
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-### Utilities
+### Utilidades
 
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- TypeScript para chequeo de tipos
+- ESLint para linting
+- Prettier para formato
 
 ### Build
 
-To build all apps and packages, run the following command:
+Para construir todas las apps y paquetes:
 
 ```
 cd my-turborepo
@@ -48,7 +41,7 @@ yarn dlx turbo build
 pnpm exec turbo build
 ```
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+Puedes construir un paquete específico con un [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
 
 ```
 # With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
@@ -62,7 +55,7 @@ pnpm exec turbo build --filter=docs
 
 ### Develop
 
-To develop all apps and packages, run the following command:
+Para desarrollar todas las apps y paquetes:
 
 ```
 cd my-turborepo
@@ -76,7 +69,7 @@ yarn exec turbo dev
 pnpm exec turbo dev
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+Puedes desarrollar un paquete específico usando un [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
 
 ```
 # With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
